@@ -1,0 +1,8 @@
+{
+  "name": "Remix دردشة النجوم - منصة الغرف الصوتية والرسائل",
+  "description": "تطبيق اجتماعي عربي متكامل للغرف الصوتية المباشرة، المحادثات الخاصة، الألعاب التفاعلية، ونظام الهدايا والمستويات.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

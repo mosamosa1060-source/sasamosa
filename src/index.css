@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Cairo', 'Tajawal', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(147, 51, 234, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(147, 51, 234, 0.45);
+}
+
+/* Room animations */
+@keyframes floatGift {
+  0% {
+    transform: translateY(0) scale(0.4) rotate(-10deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(-40px) scale(1.25) rotate(6deg);
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-60vh) scale(1) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+@keyframes floatMsg {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  12% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-40vh);
+    opacity: 0;
+  }
+}
+
+@keyframes roomTextIn {
+  0% {
+    opacity: 0;
+    transform: translate(50%, 12px);
+  }
+  12% {
+    opacity: 1;
+    transform: translate(50%, 0);
+  }
+  82% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(50%, -12px);
+  }
+}
+
+.animate-float-gift {
+  animation: floatGift 3.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float-msg {
+  animation: floatMsg 4.5s ease-out forwards;
+}
+
+.animate-room-text {
+  animation: roomTextIn 5.2s ease-out forwards;
+}
+
+@keyframes speakingPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 2px rgba(236, 72, 153, 0.4), 0 0 20px rgba(236, 72, 153, 0.35);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(236, 72, 153, 0.7), 0 0 30px rgba(236, 72, 153, 0.6);
+    transform: scale(1.04);
+  }
+}
+
+.speaking-pulse {
+  animation: speakingPulse 1.2s infinite ease-in-out;
+}
